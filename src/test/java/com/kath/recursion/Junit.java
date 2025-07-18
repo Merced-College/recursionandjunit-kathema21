@@ -213,4 +213,56 @@ public class Junit {
         assertEquals(3, Recursive.strCount("aaaaaaa", "aa"));
     }
 
+    // stringClean //
+
+    @Test //1
+    public void testStringClean_basic() {
+        assertEquals("yza", Recursive.stringClean("yyzzza"));
+    }
+
+    @Test //2
+    public void testStringClean_hello() {
+        assertEquals("Helo", Recursive.stringClean("Hello"));
+    }
+
+    @Test //3
+    public void testStringClean_allDupl() {
+        assertEquals("a", Recursive.stringClean("aaaaaaa"));
+    }
+
+    @Test //4
+    public void testStringClean_noDupl() {
+        assertEquals("abc", Recursive.stringClean("abc"));
+    }
+
+    @Test //5
+    public void testStringClean_endDupl() {
+        assertEquals("abc", Recursive.stringClean("abccccc"));
+    }
+
+    @Test //6
+    public void testStringClean_nums() {
+        assertEquals("123", Recursive.stringClean("112233"));
+    }
+
+    @Test //7
+    public void testStringClean_spaces() {
+        assertEquals("a a", Recursive.stringClean("a  a"));
+    }
+
+    @Test //8
+    public void testStringClean_symbols() {
+        assertEquals("@#", Recursive.stringClean("@@@###"));
+    }
+
+    @Test //9
+    public void testStringClean_char() {
+        assertEquals("x", Recursive.stringClean("x"));
+    }
+
+    @Test //10
+    public void testStringClean_empty() {
+        assertEquals("", Recursive.stringClean(""));
+    }
+
 }
