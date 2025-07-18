@@ -52,6 +52,9 @@ public class Recursive {
     }
 
     public static int strCount(String str, String sub) {
+        if (sub.length() == 0) {
+            return 0;
+        }
         if (str.length() < sub.length()) {
             return 0;
         }
